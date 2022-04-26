@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import { Button, colors } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
 import { Square } from './Square';
 import { COLORS } from '../../constants/colors';
@@ -26,22 +26,39 @@ const styles = StyleSheet.create({
     }
 });
 
+
+
+
 export function SquareBox() {
     const id = React.useId();
-    const [squares, setSquares] = React.useState<Array<string>>([]);
-    const addSquare = React.useCallback(() => {
+        const [squares, setSquares] = React.useState<Array<string>>([]);
+        
+            
+let deleteSquare=function(){console.log(squares);
+    squares.pop();
+    
+};
+    const addSquare = React.useCallback(() =>{ 
         setSquares(squares => ([
             ...squares,
-            COLORS.GREEN
+            Object.values(COLORS)[Math.floor(Math.random()*Object.values(COLORS).length)]
+            
+            
         ]))
-    }, [])
+        
+        
+    }
+    , [])
 
     return <div className={css(styles.main)}>
         <div className={css(styles.control)}>
+        <Button onClick={deleteSquare} variant='contained'>REMOVE SQUARE</Button>
             <Button onClick={addSquare} variant='contained'>Add square</Button>
         </div>
+        
         <div className={css(styles.squares)}>
-            {squares.map((square, i) => <Square key={id} color={square} />)}
+            {squares.map((square, id) => <Square key={id} color={square} />)}
         </div>
+       
     </div>;
 }

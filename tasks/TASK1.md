@@ -12,7 +12,7 @@ and is responsible for a single element (Button, Square) or group of other compo
 
 This application allows to add a green square and shows it on the screen on button's click. You can add as many squares as you want.
 
-Read the \*.tsx code (don't focus right now on index.* files nad react-app-env or reportWebVitals - you don't need it now) and try to understand it.
+Read the \*.tsx code (don't focus right now on index.* files and react-app-env or reportWebVitals - you don't need it now) and try to understand it.
 
 When you will be ready, then try to extend the code with following tasks:
 

@@ -1,5 +1,5 @@
 export const COLORS = {
-    PURPLE: 'purlple',
+    PURPLE: 'purple',
     PINK: 'pink',
     YELLOW: 'yellow',
     BLUE: 'blue',
