@@ -32,10 +32,13 @@ const styles = StyleSheet.create({
 export function SquareBox() {
     const id = React.useId();
         const [squares, setSquares] = React.useState<Array<string>>([]);
-        
+      
             
-let deleteSquare=function(){console.log(squares);
+let deleteSquare=function(){
+    
     squares.pop();
+    setSquares(squares=>[...squares]);
+  
     
 };
     const addSquare = React.useCallback(() =>{ 
@@ -49,6 +52,7 @@ let deleteSquare=function(){console.log(squares);
         
     }
     , [])
+
 
     return <div className={css(styles.main)}>
         <div className={css(styles.control)}>
