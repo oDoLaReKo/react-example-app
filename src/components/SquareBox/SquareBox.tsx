@@ -3,6 +3,7 @@ import { Button, colors } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
 import { Square } from './Square';
 import { COLORS } from '../../constants/colors';
+import { randomElement } from '../../functions/randomElement';
 
 const styles = StyleSheet.create({
     main: {
@@ -29,12 +30,13 @@ const styles = StyleSheet.create({
 
 
 
+
 export function SquareBox() {
     const id = React.useId();
         const [squares, setSquares] = React.useState<Array<string>>([]);
       
             
-let deleteSquare=function(){
+const deleteSquare=function(){
     
     squares.pop();
     setSquares(squares=>[...squares]);
@@ -44,10 +46,10 @@ let deleteSquare=function(){
     const addSquare = React.useCallback(() =>{ 
         setSquares(squares => ([
             ...squares,
-            Object.values(COLORS)[Math.floor(Math.random()*Object.values(COLORS).length)]
+            randomElement(Object.values(COLORS))]
             
             
-        ]))
+        ))
         
         
     }
@@ -64,5 +66,4 @@ let deleteSquare=function(){
             {squares.map((square, id) => <Square key={id} color={square} />)}
         </div>
        
-    </div>;
-}
+    </div>;}

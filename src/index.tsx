@@ -8,8 +8,7 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-function Delete()
-{return <button className='App'>usun</button>}
+
 
 root.render(
   <React.StrictMode>
