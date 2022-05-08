@@ -4,6 +4,7 @@ import { StyleSheet, css } from 'aphrodite';
 import { Square } from './Square';
 import { COLORS } from '../../constants/colors';
 import { randomElement } from '../../functions/randomElement';
+import { Circle } from './Circle';
 
 const styles = StyleSheet.create({
     main: {
@@ -35,6 +36,17 @@ export function SquareBox() {
     const id = React.useId();
         const [squares, setSquares] = React.useState<Array<string>>([]);
       
+const addCircle=function(){
+    
+    setSquares(squares => ([
+        ...squares,
+        randomElement(Object.values(COLORS))]
+        
+        
+    ))
+    console.log("tu powinno byc kolo");
+    console.log({squares})
+}
             
 const deleteSquare=function(){
     
@@ -60,10 +72,14 @@ const deleteSquare=function(){
         <div className={css(styles.control)}>
         <Button onClick={deleteSquare} variant='contained'>REMOVE SQUARE</Button>
             <Button onClick={addSquare} variant='contained'>Add square</Button>
+            <Button onClick={addCircle} variant='contained'>Add Circle</Button>
         </div>
         
         <div className={css(styles.squares)}>
-            {squares.map((square, id) => <Square key={id} color={square} />)}
+            {squares.map((square, id) => <Circle key={id} color={square}/>
+       )}
         </div>
+       
+    
        
     </div>;}
