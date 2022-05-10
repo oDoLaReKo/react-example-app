@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
     main: {
         width: '200px',
         height: '200px',
-        borderRadius: '10px',
+        borderRadius: '100px',
         margin: '5px'
     },
     purple: {
@@ -26,12 +26,11 @@ const styles = StyleSheet.create({
 
 type StyleColor = keyof typeof styles;
 
-type SquareProps = {
-    color: string,
-   
+type CircleProps = {
+    color: string
 }
 
-export function Square(props: SquareProps) {
+export function Circle(props: CircleProps) {
     const { color } = props;
 
     return <div className={css(
