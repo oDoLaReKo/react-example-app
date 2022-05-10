@@ -3,5 +3,6 @@ export const COLORS = {
     PINK: 'pink',
     YELLOW: 'yellow',
     BLUE: 'blue',
-    GREEN: 'green'
+    GREEN: 'green',
+    BROWN: 'brown'
 };
