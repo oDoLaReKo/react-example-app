@@ -16,7 +16,7 @@ export const colorStyles = StyleSheet.create({
         backgroundColor: '#00F5D4',
     },
     brown: {
-        backgroundColor: '#964b00'
+        backgroundColor: '#964b00' 
     }
 });
 

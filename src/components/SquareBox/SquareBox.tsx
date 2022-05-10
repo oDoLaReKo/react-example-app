@@ -65,9 +65,9 @@ const deleteSquare=()=>{
     </div>
     
     <div className={css(styles.squares)}>   
-        {squares.map((square:Shape, id) =>{return square.shape=='square'? 
-        <Square key={id} color={square.color}/> : square.shape=='circle'?  
-        <Circle key={id} color={square.color}/>:0})}        
+        {squares.map((square:Shape, id) =>{return square.shape==='square'? 
+        <Square key={id} color={square.color}/> : square.shape==='circle'?  
+        <Circle key={id} color={square.color}/>:0 })}        
     </div>  
 </div>);
 }

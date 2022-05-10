@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         width: '200px',
         height: '200px',
         borderRadius: '100px',
-        margin: '5px'
+        margin: '5px' 
     }
 });
 
