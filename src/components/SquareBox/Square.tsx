@@ -27,8 +27,7 @@ const styles = StyleSheet.create({
 type StyleColor = keyof typeof styles;
 
 type SquareProps = {
-    color: string,
-   
+    color: string
 }
 
 export function Square(props: SquareProps) {
