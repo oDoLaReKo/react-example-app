@@ -33,24 +33,17 @@ export function SquareBox() {
     interface Shape{
         color:string;
         shape:string;
-    };
+    }
     const id = React.useId();
-<<<<<<< HEAD
-        const [squares, setSquares] = React.useState<Array<Shape>>([]);
-        const addCircle=()=>{
-=======
-
-        const [squares, setSquares] = React.useState<Array<Object>>([]);
-const addCircle=function(){
->>>>>>> b4e085f23847ca337e303116117eb171fa3b0428
-   
+    const [squares, setSquares] = React.useState<Array<Shape>>([]);
+    const addCircle=()=>{
             setSquares(squares => ([
                 ...squares,{color:randomElement(Object.values(COLORS)),shape:'circle'}
             ]           
             ))
-        }           
-const deleteSquare=()=>{
-    
+        } 
+
+const deleteSquare=()=>{   
     squares.pop();
     setSquares(squares=>[...squares]);    
 };
@@ -62,7 +55,7 @@ const deleteSquare=()=>{
     }
     , [])
 
-<<<<<<< HEAD
+
     return(
 <div className={css(styles.main)}>
     <div className={css(styles.control)}>
@@ -78,38 +71,3 @@ const deleteSquare=()=>{
     </div>  
 </div>);
 }
-=======
-
-    const addSquare = React.useCallback(
-        () => {
-            setSquares(squares => ([
-                ...squares,
-                randomElement(Object.values(COLORS))]
-            ))
-        }, []);
-
-    return <div className={css(styles.main)}>
-        <div className={css(styles.control)}>
-            <Button onClick={deleteSquare} variant='contained'>REMOVE SQUARE</Button>
-            <Button onClick={addSquare} variant='contained'>Add square</Button>
-            <Button onClick={addCircle} variant='contained'>Add Circle</Button>
-        </div>
-
-        <div className={css(styles.squares)}>
-
-           
-        {squares.map((square, id) =>{if(square.type=='square') return <Square key={id} color={square.color}/> 
-        else if(square.type=='circle') return <Circle key={id} color={square.color}/>
-    
-}
-       )}
-        
-            
-        </div>
-       
-    
-       
-    </div>;}
-
-            
->>>>>>> b4e085f23847ca337e303116117eb171fa3b0428
