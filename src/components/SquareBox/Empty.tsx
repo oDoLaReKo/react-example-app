@@ -7,7 +7,6 @@ const emptyStyles = css`
     border-radius: 5px;
     border: 2px dashed gray;
 `;
-
-export function Empty() {
-    return <div css={emptyStyles} />;
+export default function Empty() {
+  return <div css={emptyStyles} />;
 }

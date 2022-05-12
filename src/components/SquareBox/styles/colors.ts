@@ -1,4 +1,5 @@
-import { StyleSheet, css } from 'aphrodite';
+import { StyleSheet } from 'aphrodite';
+
 export const colorStyles = StyleSheet.create({
     purple: {
         backgroundColor: '#9b5de5',
@@ -16,8 +17,7 @@ export const colorStyles = StyleSheet.create({
         backgroundColor: '#00F5D4',
     },
     brown: {
-        backgroundColor: '#964b00' 
-    }
+        backgroundColor: '#964b00',
+    },
 });
-
 export type StyleColor = keyof typeof colorStyles;

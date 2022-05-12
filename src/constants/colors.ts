@@ -4,5 +4,5 @@ export const COLORS = {
     YELLOW: 'yellow',
     BLUE: 'blue',
     GREEN: 'green',
-    BROWN: 'brown'
+    BROWN: 'brown',
 };
