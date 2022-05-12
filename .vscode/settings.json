@@ -2,4 +2,5 @@
     "eslint.alwaysShowStatus": true,
     "eslint.format.enable": true,
     "editor.renderWhitespace": "all",
+    "files.eol": "\n",
 }
