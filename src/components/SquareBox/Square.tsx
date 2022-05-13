@@ -14,7 +14,7 @@ type SquareProps = {
     color: string,
 };
 
-export default function Square(props: SquareProps) {
+export function Square(props: SquareProps) {
   const { color } = props;
   return (
     <div className={css(

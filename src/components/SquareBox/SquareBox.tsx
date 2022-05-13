@@ -2,10 +2,10 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
-import { Square } from './Square';
 import { COLORS } from '../../constants/colors';
 import { randomElement } from '../../functions/randomElement';
 import { Circle } from './Circle';
+import { Square } from './Square';
 
 const styles = StyleSheet.create({
   main: {
