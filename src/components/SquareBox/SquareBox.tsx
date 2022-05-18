@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 import React from 'react';
 import { Button } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
@@ -28,16 +27,15 @@ const styles = StyleSheet.create({
     marginRight: '15px',
   },
 });
-
+interface Shape {
+  color: string;
+  shape: string;
+}
 export function SquareBox() {
-  interface Shape {
-    color: string;
-    shape: string;
-  }
   const id = React.useId();
   const [squares, setSquares] = React.useState<Array<Shape>>([]);
   const addCircle = () => {
-    setSquares((squares) => ([
+    setSquares(() => ([
       ...squares, { color: randomElement(Object.values(COLORS)), shape: 'circle' },
     ]
     ));
@@ -45,7 +43,7 @@ export function SquareBox() {
 
   const deleteSquare = () => {
     squares.pop();
-    setSquares((squares) => [...squares]);
+    setSquares(() => [...squares]);
   };
   const addSquare = React.useCallback(
     () => {
@@ -66,9 +64,8 @@ export function SquareBox() {
       </div>
 
       <div className={css(styles.squares)}>
-        {squares.map((square: Shape, id) => (square.shape === 'square'
-          ? <Square key={id} color={square.color} /> : square.shape === 'circle'
-            ? <Circle key={id} color={square.color} /> : 0))}
+        {squares.map((square: Shape) => (square.shape === 'square'
+          ? <Square key={id} color={square.color} /> : <Circle key={id} color={square.color} />))}
       </div>
     </div>
   );
