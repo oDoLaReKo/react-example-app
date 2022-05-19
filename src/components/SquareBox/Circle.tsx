@@ -5,22 +5,22 @@ const styles = StyleSheet.create({
     main: {
         width: '200px',
         height: '200px',
-        borderRadius: '10px',
+        borderRadius: '100px',
         margin: '5px',
     },
 });
 
-type SquareProps = {
-    color: string,
+type CircleProps = {
+    color: string
 };
 
-export function Square(props: SquareProps) {
-  const { color } = props;
-  return (
-    <div className={css(
-  styles.main,
+export function Circle(props: CircleProps) {
+    const { color } = props;
+return (
+  <div className={css(
+        styles.main,
         colorStyles[color as StyleColor],
     )}
-    />
-  );
+  />
+);
 }
