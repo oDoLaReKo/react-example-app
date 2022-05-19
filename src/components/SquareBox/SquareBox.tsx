@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
 import { COLORS } from '../../constants/colors';
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
     marginRight: '15px',
   },
 });
+
 interface Shape {
   color: string;
   shape: string;
@@ -54,7 +55,7 @@ export function SquareBox() {
     },
     [],
   );
-
+  //useEffect(() => { setTimeout(() => { deleteSquare(); console.log('why is rendering?'); }, 1000); }, [squares]);
   return (
     <div className={css(styles.main)}>
       <div className={css(styles.control)}>
