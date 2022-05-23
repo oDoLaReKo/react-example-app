@@ -27,16 +27,18 @@ const styles = StyleSheet.create({
     marginRight: '15px',
   },
 });
+
 interface Shape {
   color: string;
   shape: string;
+  id: string;
 }
+
 export function SquareBox() {
-  const id = React.useId();
   const [squares, setSquares] = React.useState<Array<Shape>>([]);
   const addCircle = () => {
     setSquares(() => ([
-      ...squares, { color: randomElement(Object.values(COLORS)), shape: 'circle' },
+      ...squares, { color: randomElement(Object.values(COLORS)), shape: 'circle', id: React.useId() },
     ]
     ));
   };
@@ -47,9 +49,9 @@ export function SquareBox() {
   };
   const addSquare = React.useCallback(
     () => {
-      setSquares((squares) => ([
-        ...squares,
-        { color: randomElement(Object.values(COLORS)), shape: 'square' }]
+      setSquares((prevValue) => ([
+        ...prevValue,
+        { color: randomElement(Object.values(COLORS)), shape: 'square', id: React.useId() }]
       ));
     },
     [],
@@ -64,8 +66,10 @@ export function SquareBox() {
       </div>
 
       <div className={css(styles.squares)}>
-        {squares.map((square: Shape) => (square.shape === 'square'
-          ? <Square key={id} color={square.color} /> : <Circle key={id} color={square.color} />))}
+        {squares.map((square: Shape) => (
+          square.shape === 'square'
+          ? <Square key={square.id} color={square.color} />
+          : <Circle key={square.id} color={square.color} />))}
       </div>
     </div>
   );
