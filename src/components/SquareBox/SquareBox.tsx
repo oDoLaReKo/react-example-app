@@ -33,6 +33,7 @@ interface Shape {
   shape: string;
 }
 export function SquareBox() {
+  //const [pom, setPom] = React.useState(0);
   const id = React.useId();
   const [squares, setSquares] = React.useState<Array<Shape>>([]);
   const addCircle = () => {
@@ -40,6 +41,7 @@ export function SquareBox() {
       ...squares, { color: randomElement(Object.values(COLORS)), shape: 'circle' },
     ]
     ));
+    //setPom(pom+1);
   };
 
   const deleteSquare = () => {
@@ -52,10 +54,11 @@ export function SquareBox() {
         ...squares,
         { color: randomElement(Object.values(COLORS)), shape: 'square' }]
       ));
+     
     },
     [],
   );
-  //useEffect(() => { setTimeout(() => { deleteSquare(); console.log('why is rendering?'); }, 1000); }, [squares]);
+    //useEffect(() => { setTimeout(() => { deleteSquare(); console.log('why is rendering?'); }, 4000); }, [pom]);
   return (
     <div className={css(styles.main)}>
       <div className={css(styles.control)}>
