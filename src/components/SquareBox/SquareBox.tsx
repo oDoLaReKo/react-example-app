@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
 import { COLORS } from '../../constants/colors';
@@ -35,18 +35,12 @@ interface Shape {
 }
 
 export function SquareBox() {
-<<<<<<< HEAD
-  //const [pom, setPom] = React.useState(0);
-  const id = React.useId();
-=======
->>>>>>> main
   const [squares, setSquares] = React.useState<Array<Shape>>([]);
   const addCircle = () => {
     setSquares(() => ([
       ...squares, { color: randomElement(Object.values(COLORS)), shape: 'circle', id: React.useId() },
     ]
     ));
-    //setPom(pom+1);
   };
 
   const deleteSquare = () => {
@@ -59,11 +53,10 @@ export function SquareBox() {
         ...prevValue,
         { color: randomElement(Object.values(COLORS)), shape: 'square', id: React.useId() }]
       ));
-     
     },
     [],
   );
-    //useEffect(() => { setTimeout(() => { deleteSquare(); console.log('why is rendering?'); }, 4000); }, [pom]);
+
   return (
     <div className={css(styles.main)}>
       <div className={css(styles.control)}>
