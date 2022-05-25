@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import { StyleSheet, css } from 'aphrodite';
+import { nanoid } from 'nanoid';
 import { COLORS } from '../../constants/colors';
 import { randomElement } from '../../functions/randomElement';
 import { Circle } from './Circle';
@@ -37,8 +38,8 @@ interface Shape {
 export function SquareBox() {
   const [squares, setSquares] = React.useState<Array<Shape>>([]);
   const addCircle = () => {
-    setSquares(() => ([
-      ...squares, { color: randomElement(Object.values(COLORS)), shape: 'circle', id: React.useId() },
+    setSquares((prevValue) => ([
+      ...prevValue, { color: randomElement(Object.values(COLORS)), shape: 'circle', id: nanoid() },
     ]
     ));
   };
@@ -51,7 +52,7 @@ export function SquareBox() {
     () => {
       setSquares((prevValue) => ([
         ...prevValue,
-        { color: randomElement(Object.values(COLORS)), shape: 'square', id: React.useId() }]
+        { color: randomElement(Object.values(COLORS)), shape: 'square', id: nanoid() }]
       ));
     },
     [],
