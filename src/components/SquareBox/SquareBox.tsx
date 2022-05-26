@@ -37,16 +37,23 @@ interface Shape {
 
 export function SquareBox() {
   const [squares, setSquares] = React.useState<Array<Shape>>([]);
+  const deleteSquare = () => {
+    squares.pop();
+    setSquares(() => [...squares]);
+  };
+  const checkArray = () => {
+    // console.log(squares.filter((item) => item.id !== squares[squares.length - 1].id));
+    setSquares(() => [...squares.filter((item) => item.id !== squares[squares.length - 1].id)]);
+  };
   const addCircle = () => {
     setSquares((prevValue) => ([
       ...prevValue, { color: randomElement(Object.values(COLORS)), shape: 'circle', id: nanoid() },
     ]
     ));
-  };
-
-  const deleteSquare = () => {
-    squares.pop();
-    setSquares(() => [...squares]);
+   // console.log(squares[squares.length - 1].id); // whay don't we have the newest circle in array?
+     setTimeout(() => { checkArray(); }, 1000);
+console.log(squares);
+   // const deletShape= (id) => {squares.filter()}
   };
   const addSquare = React.useCallback(
     () => {
@@ -54,16 +61,20 @@ export function SquareBox() {
         ...prevValue,
         { color: randomElement(Object.values(COLORS)), shape: 'square', id: nanoid() }]
       ));
+        // setTimeout(() => { setSquares(() => [...squares]); }, 1000);
+       console.log(squares);// empty array
+       setTimeout(() => { checkArray(); }, 1000);
     },
     [],
   );
-
+// const addShape = (shape) => { if (shape === 'circle') return addCircle(); return addCircle(); };
   return (
     <div className={css(styles.main)}>
       <div className={css(styles.control)}>
         <Button onClick={deleteSquare} variant="contained">REMOVE SQUARE</Button>
         <Button onClick={addSquare} variant="contained">Add square</Button>
         <Button onClick={addCircle} variant="contained">Add Circle</Button>
+        <Button onClick={checkArray} variant="contained">Check array</Button>
       </div>
 
       <div className={css(styles.squares)}>
